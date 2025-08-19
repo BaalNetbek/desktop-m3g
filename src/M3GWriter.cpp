@@ -756,7 +756,7 @@ OutMemoryStream:: ~OutMemoryStream ()
 {
     if ((int)buf.size() > 0) {
         ofstream ofs (name, ios::out|ios::binary);
-        assert (ofs != 0);
+        // assert (ofs != 0);
         ofs.write (&buf[0], buf.size());
     }
 }

@@ -9,7 +9,7 @@ find_package (GLUT   REQUIRED)
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/../../bin/include)
 link_directories    (${CMAKE_CURRENT_SOURCE_DIR}/../../bin/lib/linux)
 
-set  (LIBS m3g glut)
+set  (LIBS m3g glut ${OPENGL_LIBRARIES})
 file (GLOB SRCS *.cpp)
 
 add_executable        (a.out ${SRCS})

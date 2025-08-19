@@ -4,14 +4,15 @@
 using namespace m3g;
 using namespace std;
 
-const int size = 1024;
+
+#define BUF_SIZE 1024
 
 ArithmeticException:: ArithmeticException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -28,10 +29,10 @@ const char* ArithmeticException:: what () const throw()
 
 IllegalArgumentException:: IllegalArgumentException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -48,10 +49,10 @@ const char* IllegalArgumentException:: what () const throw()
 
 IllegalStateException:: IllegalStateException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -67,10 +68,10 @@ const char* IllegalStateException:: what () const throw()
 
 IndexOutOfBoundsException:: IndexOutOfBoundsException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -86,10 +87,10 @@ const char* IndexOutOfBoundsException:: what () const throw()
 
 IOException:: IOException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -106,10 +107,10 @@ const char* IOException:: what () const throw()
 
 NullPointerException:: NullPointerException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -125,10 +126,10 @@ const char* NullPointerException:: what () const throw()
 
 SecurityException:: SecurityException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -144,10 +145,10 @@ const char* SecurityException:: what () const throw()
 
 NotImplementedException:: NotImplementedException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -163,10 +164,10 @@ const char* NotImplementedException:: what () const throw()
 
 OpenGLException:: OpenGLException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }
@@ -182,10 +183,10 @@ const char* OpenGLException:: what () const throw()
 
 InternalException:: InternalException (const char* file, const char* func, const char* format, ...)
 {
-    char buf[size];
+    char buf[BUF_SIZE];
     va_list args;
     va_start (args, format);
-    vsnprintf (buf, size, format, args);
+    vsnprintf (buf, BUF_SIZE, format, args);
     va_end (args);
     msg = string(file) + ":" + string(func) + " " + string(buf);
 }

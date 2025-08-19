@@ -773,7 +773,7 @@ InMemoryStream:: InMemoryStream (const char* name) : cur(0)
     assert (name != 0);
 
     ifstream ifs (name);
-    assert (ifs != 0);
+    // assert (ifs != 0);
 
     ifs.seekg (0, ios::end);
     int file_size = ifs.tellg ();
