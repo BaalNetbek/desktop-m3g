@@ -754,15 +754,17 @@ float*          M3GReader:: getFloat32Array (int size)
 
 char*    M3GReader:: getString    ()
 {
-    char* ret = new char[256];
-    memset (ret, 0, 256);
-    for (int i = 0; i < 255; i++) {
-        char c;
-        stream->read (&c, 1);
+    std::string s;
+    char c;
+    while (!stream->eof()) {
+        stream->read(&c, 1);
         if (c == '\0')
             break;
-        ret[i] = c;
+        s.push_back(c);
     }
+
+    char* ret = new char[s.size() + 1];
+    std::memcpy(ret, s.c_str(), s.size() + 1);
     return ret;
 }
 
