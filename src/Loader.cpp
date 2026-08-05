@@ -550,9 +550,11 @@ void Loader:: parseSprite3D ()
 {
     M3GObject3DStruct         obj;
     M3GTransformableStruct    tra;
+    M3GNodeStruct             nod;
     M3GSprite3DStruct         sprite;
     reader->readObject3D      (&obj);
     reader->readTransformable (&tra);
+    reader->readNode          (&nod);
     reader->readSprite3D      (&sprite);
             
     bool        scaled = sprite.is_scaled;
@@ -562,6 +564,7 @@ void Loader:: parseSprite3D ()
     Sprite3D* spr = new Sprite3D (scaled, img, app);
     setObject3D      (spr, obj);
     setTransformable (spr, tra);
+    setNode          (spr, nod);
     setSprite3D      (spr, sprite);
 
     objs.push_back (spr);
